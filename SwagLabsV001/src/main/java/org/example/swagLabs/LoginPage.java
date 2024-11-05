@@ -1,18 +1,20 @@
-package org.example;
+package org.example.swagLabs;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
-    private WebDriver driver;
+public class LoginPage extends BasePage {
+
 
     private By usernameInput = By.id("user-name");
     private By passwordInput = By.id("password");
     private By loginButton = By.id("login-button");
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
+
+
     public void performLogin(String username, String password) {
         driver.findElement(usernameInput).sendKeys(username);
         driver.findElement(passwordInput).sendKeys(password);

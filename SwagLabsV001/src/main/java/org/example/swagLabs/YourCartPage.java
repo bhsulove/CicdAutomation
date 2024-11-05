@@ -1,4 +1,4 @@
-package org.example;
+package org.example.swagLabs;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,14 +9,14 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class YourCartPage {
-    private WebDriver driver;
+public class YourCartPage extends BasePage {
     private WebDriverWait wait;
 
     public YourCartPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
+
     public List<String> displayProductsInCart() {
         List<String> productNames = new ArrayList<>();
         try {

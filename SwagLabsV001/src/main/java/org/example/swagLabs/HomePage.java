@@ -1,4 +1,4 @@
-package org.example;
+package org.example.swagLabs;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,11 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HomePage {
-    private WebDriver driver;
+public class HomePage extends BasePage {
+
     private WebDriverWait wait;
     public HomePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
     public String getProductPageTitle() {
@@ -54,7 +54,7 @@ public class HomePage {
             return 0; // Return 0 if there's an error
         }
     }
-    public void navigatToYourCartPage(){
+    public void navigateToYourCartPage(){
         driver.findElement(By.cssSelector(".fa-layers-counter.shopping_cart_badge")).click();
         System.out.println("Inside Your Cart Page");
     }
